@@ -41,12 +41,12 @@ int main(void) {
     device_reset();
     
     ui_menu_init();
-    ui_menu_add((char *)("Say Hello"), (void *)fn_sayHello );
-    ui_menu_add((char *)("Count ext ports"), (void *)fn_countExtPorts );
+    ui_menu_add("Say Hello", fn_sayHello );
+    ui_menu_add("Count ext ports", fn_countExtPorts );
     //    ui_menu_add((char *)"Count fast ports", (void *)fn_countFastPorts );
-    ui_menu_add((char *)("Show DAC values"), (void *)fn_showDACValue );
-    menuentry_t *optionsMenu = ui_menu_add((char *)("Options:\n(Submenu)"), (void *)dummy );
-    ui_menu_add_sub(optionsMenu, (char *)("Send data via\nUART"), (void *)opt_uartonoff_init );
+    ui_menu_add("Show DAC values", fn_showDACValue );
+    menuentry_t *optionsMenu = ui_menu_add("Options:\n(Submenu)", dummy );
+    ui_menu_add_sub(optionsMenu, "Send data via\nUART", opt_uartonoff_init );
     
     ui_menu_show();
     

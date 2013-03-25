@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h>
 #include <util/delay.h>
 
 #include "../../src-lib/lcd/lcd.h"
@@ -18,7 +19,8 @@
 
 #include "hello.h"
 
-int hello_position = 0;
+int hello_position = 0;                     // position of -
+char buf[3];                                // uart output buffer
 
 void *fn_sayHello(void){
     lcd_puts(("hello world."));
@@ -30,10 +32,12 @@ void *fn_sayHello(void){
     }
     if(opt_send_data_via_uart){
         LIGHT_ON(LED_RED);
-        uart_putc( (unsigned char)hello_position );
+        itoa(hello_position, buf, 10);
+        uart_puts( buf );
+        uart_puts( "\n" );
         LIGHT_OFF(LED_RED);
     }
     _delay_ms(200);
-    //return (void *) NULL;
+    return (void *) NULL;
 }
 

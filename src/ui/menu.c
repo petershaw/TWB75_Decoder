@@ -25,6 +25,9 @@
  */
 void ui_menu_init(void){
     menu = malloc(sizeof(menu_t));
+    menu->firstentry = NULL;
+    menu->lastentry = NULL;
+    
     menuentry_t *entry = malloc(sizeof (menuentry_t));
     entry->position = -1;
     
@@ -32,6 +35,9 @@ void ui_menu_init(void){
 
     // loop around
     entry->next = entry;
+    entry->parent = NULL;
+    entry->submenu = NULL;
+    entry->fn = NULL;
     
     menu->firstentry = entry;
     menu->lastentry = entry;
@@ -51,6 +57,8 @@ menuentry_t *ui_menu_add(char* data, void* fn){
         // if this should be a sub item
         // create a new item
         menuentry_t *entry = malloc(sizeof (menuentry_t));
+        entry->parent = NULL;
+        entry->submenu = NULL;
         
         entry->position = ++lastposition;
         entry->data = data;
@@ -86,6 +94,9 @@ menuentry_t *ui_menu_add_sub(menuentry_t *parent, char* data, void* fn){
     }
 
     this = malloc(sizeof (menuentry_t));
+    this->position = 0;
+    this->submenu = NULL;
+    
     this->data = data;
     this->fn = fn;
     this->next = parent->submenu;
