@@ -14,13 +14,13 @@
 #include "../../src-lib/lcd/lcd.h"
 #include "../../src-lib/uart/uart.h"
 
+#include "../global.h";
 #include "../device/deviceconfig.h"
 #include "../ui/lights.h"
 
 #include "hello.h"
 
 int hello_position = 0;                     // position of -
-char buf[3];                                // uart output buffer
 
 void *fn_sayHello(void){
     lcd_puts(("hello world."));

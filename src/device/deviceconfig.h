@@ -10,7 +10,9 @@
 #define AnalyserDude_deviceconfig_h
 
 #include <stdio.h>
+#ifndef IGNOREINTESTS
 #include <avr/io.h>
+#endif
 
 // DEFINE SOFTWARE VERSION
 // ---------------------------------------------

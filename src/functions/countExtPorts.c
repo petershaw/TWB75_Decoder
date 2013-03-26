@@ -102,7 +102,22 @@ void *fn_countExtPorts(void){
     lcd_gotoxy(0, 2);
     sprintf(buf_cnt_ext_ports, "%3d %3d %3d %3d", cntBlue, cntGreen, cntYellow, cntWhite);
     lcd_puts(buf_cnt_ext_ports);
-    
+    if(opt_send_data_via_uart){
+        LIGHT_ON(LED_RED);
+        itoa(cntBlue, buf, 10);
+        uart_puts( buf );
+        uart_puts( ",");
+        itoa(cntGreen, buf, 10);
+        uart_puts( buf );
+        uart_puts( "," );
+        itoa(cntYellow, buf, 10);
+        uart_puts( buf );
+        uart_puts( "," );
+        itoa(cntWhite, buf, 10);
+        uart_puts( buf );
+
+        LIGHT_OFF(LED_RED);
+    }
     // count the ports
     countExtPorts_resetOnOverflow();
     countExtPorts_read();

@@ -11,7 +11,7 @@
 #include "../../src/ui/menu.h"
 
 
-void dummy(void){};
+void dummy(void){}
 
 TEST(test1) {
     assertTrue(1);

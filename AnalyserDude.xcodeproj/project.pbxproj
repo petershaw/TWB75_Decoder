@@ -19,6 +19,10 @@
 		3000B38216EB9807009F4E75 /* menu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = menu.h; path = src/ui/menu.h; sourceTree = "<group>"; };
 		3000B38316EB981A009F4E75 /* menu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = menu.c; path = src/ui/menu.c; sourceTree = "<group>"; };
 		3000B38616EBA09F009F4E75 /* menuTest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = menuTest.c; path = tests/menu/menuTest.c; sourceTree = "<group>"; };
+		300175091702553000332DE8 /* langTest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = langTest.c; path = tests/lang/langTest.c; sourceTree = "<group>"; };
+		3001750A1702553000332DE8 /* langTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = langTest.h; path = tests/lang/langTest.h; sourceTree = "<group>"; };
+		3001750B170255EC00332DE8 /* langTest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = langTest.c; path = tests/langTest.c; sourceTree = "<group>"; };
+		3001750C170255EC00332DE8 /* menuTest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = menuTest.c; path = tests/menuTest.c; sourceTree = "<group>"; };
 		3079F19A16EC1F5600750ED5 /* menuTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = menuTest.h; path = tests/menu/menuTest.h; sourceTree = "<group>"; };
 		3079F19C16EC1FBC00750ED5 /* test.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = test.c; path = tests/test.c; sourceTree = "<group>"; };
 		3079F19E16ECA89600750ED5 /* frontbuttoncontrol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = frontbuttoncontrol.h; path = src/control/frontbuttoncontrol.h; sourceTree = "<group>"; };
@@ -113,10 +117,22 @@
 		3000B38416EB9D8B009F4E75 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				3001750B170255EC00332DE8 /* langTest.c */,
+				3001750C170255EC00332DE8 /* menuTest.c */,
+				30017508170254F700332DE8 /* lang */,
 				3079F19C16EC1FBC00750ED5 /* test.c */,
 				3079F19B16EC1FA400750ED5 /* ui */,
 			);
 			name = Tests;
+			sourceTree = "<group>";
+		};
+		30017508170254F700332DE8 /* lang */ = {
+			isa = PBXGroup;
+			children = (
+				300175091702553000332DE8 /* langTest.c */,
+				3001750A1702553000332DE8 /* langTest.h */,
+			);
+			name = lang;
 			sourceTree = "<group>";
 		};
 		3079F19B16EC1FA400750ED5 /* ui */ = {

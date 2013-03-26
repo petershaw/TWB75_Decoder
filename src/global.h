@@ -20,6 +20,7 @@
 volatile bool isApplicationRunning;
 bool opt_send_data_via_uart;
 bool debug_mode;
+char buf[16];                                // uart output buffer
 
 void *dummy(void);
 

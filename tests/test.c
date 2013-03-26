@@ -4,10 +4,12 @@
 #endif
 
 #include "menu/menuTest.h"
+#include "lang/langTest.h";
 
 // This struct contains all test suites
 TEST_SUITES {
-    TEST_SUITE_ADD(UI_MENUTEST), // add T1 test suite
+    TEST_SUITE_ADD(UI_MENUTEST),    // add T1 test suite
+    TEST_SUITE_ADD(LANG_TEST),      // add T1 test suite
     TEST_SUITES_CLOSURE
 };
 

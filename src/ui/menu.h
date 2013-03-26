@@ -9,6 +9,8 @@
 #ifndef AnalyserDude_menu_h
 #define AnalyserDude_menu_h
 
+#include <stdbool.h>
+
 /**
  * Represents a single element in the menu.
  */

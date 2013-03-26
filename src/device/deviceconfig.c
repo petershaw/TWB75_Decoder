@@ -9,8 +9,10 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+#ifndef IGNOREINTESTS
 #include <avr/interrupt.h>
 #include <avr/eeprom.h>
+#endif
 
 #ifndef IGNOREINTESTS
 #include "../../src-lib/uart/uart.h"
@@ -29,9 +31,9 @@ void restore_preferences(void){
     char pref;
     pref = eeprom_read_byte(&preferences_settings);
     
-    // ... if PREFERENCE_UART_DATA
-    opt_send_data_via_uart = true;
-    
+    if(pref & PREFERENCE_UART_DATA == PREFERENCE_UART_DATA) {
+        opt_send_data_via_uart = true;
+    }
 }
 
 /**

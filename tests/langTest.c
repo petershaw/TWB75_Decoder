@@ -19,8 +19,8 @@ int clean_suite(void) {
     return 0;
 }
 
-void test_menu_init_01() {
-    puts("test MENU");
+void test_lang_init_01() {
+    puts("test LANG");
     int i = 1;
     CU_ASSERT_EQUAL( 1, i);
 }
