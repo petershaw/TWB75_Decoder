@@ -4,3 +4,9 @@ AnalyserDude.xcodeproj/xcuserdata/pshaw.xcuserdatad/xcschemes/AnalyserDude.xcsch
 AnalyserDude.xcodeproj/xcuserdata/pshaw.xcuserdatad/xcschemes/AnalyserTests.xcscheme
 
 AnalyserDude.xcodeproj/xcuserdata/pshaw.xcuserdatad/xcschemes/xcschememanagement.plist
+
+*.o
+
+*.o
+
+*.xcuserstate
