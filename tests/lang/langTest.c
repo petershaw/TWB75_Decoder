@@ -16,16 +16,16 @@
 
 TEST(testPref) {
     
-    int rA;
-    int rB;
-    int rC;
-    int rD;
+    char rA;
+    char rB;
+    char rC;
+    char rD;
     rA = 0;
     rB = 0;
     rC = 0;
     rD = 0;
     
-    char pref = 5;              // A + C
+    char pref = 5;                          // A + C
         
     if(pref & PREF_A == PREF_A) {
         rA = 1;
