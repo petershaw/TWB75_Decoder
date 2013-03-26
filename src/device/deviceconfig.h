@@ -60,10 +60,15 @@
 // ---------------------------------------------
 #define UART_BAUD_RATE                  9600
 
+// PREFERENCES
+// ---------------------------------------------
+#define PREFERENCE_UART_DATA            1
+#define PREFERENCE_DEBUG_MODE           2
+
 // API
 // ---------------------------------------------
-extern void device_init(void);
+void device_init(void);
 
-extern void device_reset(void);
+void device_reset(void);
 
 #endif

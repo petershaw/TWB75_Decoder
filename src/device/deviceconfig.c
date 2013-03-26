@@ -10,7 +10,7 @@
 #include <stdbool.h>
 
 #include <avr/interrupt.h>
-
+#include <avr/eeprom.h>
 
 #ifndef IGNOREINTESTS
 #include "../../src-lib/uart/uart.h"
@@ -20,7 +20,19 @@
 #include "../global.h"
 #include "deviceconfig.h"
 
-//const char WelcomeMessage[] PROGMEM = ":WELCOME TO THE:\nAnalyserDude";
+char EEMEM preferences_settings;
+
+/**
+ * Restores the saved preferences from the eeprom 
+ */
+void restore_preferences(void){
+    char pref;
+    pref = eeprom_read_byte(&preferences_settings);
+    
+    // ... if PREFERENCE_UART_DATA
+    opt_send_data_via_uart = true;
+    
+}
 
 /**
  * Initialize the lcd and printout a welcome message 
@@ -82,6 +94,9 @@ void device_init(void){
     
     // set the device leds
     LED_DATA_DIRECTION_REGISTER |= 3; // 0b00000011;                                       // set up pin direction PortB as Output
+    
+    // read preferences from eeprom
+    restore_preferences();
     
     // enable the interrupts
     sei();

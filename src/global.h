@@ -18,6 +18,9 @@
 #define FLIP(U, N)  ((void)((U) ^= 1u << (N)))
 
 volatile bool isApplicationRunning;
+bool opt_send_data_via_uart;
+bool debug_mode;
+
 void *dummy(void);
 
 #endif

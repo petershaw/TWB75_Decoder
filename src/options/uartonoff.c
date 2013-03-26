@@ -13,6 +13,7 @@
 #include "../../src-lib/lcd/lcd.h"
 #include "../../src-lib/uart/uart.h"
 
+#include "../global.h"
 #include "../device/deviceconfig.h"
 #include "../ui/lights.h"
 #include "../control/frontbuttoncontrol.h"
@@ -34,6 +35,7 @@ void *opt_uartonoff_init(void){
     
     if(frontbuttoncontrol_get_button() == BUTTON_BLUE){
         opt_send_data_via_uart = !opt_send_data_via_uart;
+        //preferences_save();
         if(opt_send_data_via_uart){
             LIGHT_ON(LED_RED);
             uart_puts("Starts to send data:\n");

@@ -32,7 +32,7 @@ void *dummy(void){return (void *) NULL;};
 
 // GLOBAL OPTIONS
 // ---------------------------------------------
-bool opt_send_data_via_uart = false;
+// see deviceconfig.h
 
 int main(void) {
     //initialize the device
