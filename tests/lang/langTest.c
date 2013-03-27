@@ -26,17 +26,17 @@ TEST(testPref) {
     rD = 0;
     
     char pref = 5;                          // A + C
-        
-    if(pref & PREF_A == PREF_A) {
+
+    if(pref & PREF_A ) {
         rA = 1;
     }
-    if(pref & PREF_B == PREF_B) {
+    if(pref & PREF_B ) {
         rB = 1;
     }
-    if(pref & PREF_C == PREF_C) {
+    if(pref & PREF_C) {
         rC = 1;
     }
-    if(pref & PREF_D == PREF_D) {
+    if(pref & PREF_D ) {
         rD = 1;
     }
 
