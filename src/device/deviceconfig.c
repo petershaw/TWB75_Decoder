@@ -22,19 +22,31 @@
 #include "../global.h"
 #include "deviceconfig.h"
 
-char EEMEM preferences_settings;
-
 /**
  * Restores the saved preferences from the eeprom 
  */
 void restore_preferences(void){
     char pref;
-    pref = eeprom_read_byte(&preferences_settings);
+    pref = eeprom_read_byte(EEPROM_ADRESS_PREFERENCES);
     
-    if(pref & PREFERENCE_UART_DATA == PREFERENCE_UART_DATA) {
+    if(pref & PREFERENCE_UART_DATA) {
         opt_send_data_via_uart = true;
     }
 }
+
+/**
+ * Restores the saved preferences from the eeprom
+ */
+void save_preferences(void){
+    char pref;
+//    if(opt_send_data_via_uart)
+//    pref = eeprom_read_byte(EEPROM_ADRESS_PREFERENCES);
+    
+//    if(pref & PREFERENCE_UART_DATA) {
+//        ;
+//    }
+}
+
 
 /**
  * Initialize the lcd and printout a welcome message 

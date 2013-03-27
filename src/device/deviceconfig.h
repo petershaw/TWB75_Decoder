@@ -55,8 +55,9 @@
 #define PISO_OUTPUT_PIN                 0b00010000         // SR .pin  9
 #define PISO_OUTPUT_PIN_NAME            PB4         
 
-// DEFINE THE BUTTONS
+// DEFINE THE EEPROM
 // ---------------------------------------------
+#define EEPROM_ADRESS_PREFERENCES       (0x00)            // First Cell
 
 // DEFINE COMMUNICATION SPEED
 // ---------------------------------------------
