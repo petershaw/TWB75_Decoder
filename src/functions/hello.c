@@ -14,7 +14,7 @@
 #include "../../src-lib/lcd/lcd.h"
 #include "../../src-lib/uart/uart.h"
 
-#include "../global.h";
+#include "../global.h"
 #include "../device/deviceconfig.h"
 #include "../ui/lights.h"
 

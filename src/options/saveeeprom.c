@@ -39,5 +39,6 @@ void *opt_save_preferences(void){
     // turn the application off...
     isApplicationRunning = false;
     LIGHT_OFF(LED_RED);
+    return NULL;
 }
 

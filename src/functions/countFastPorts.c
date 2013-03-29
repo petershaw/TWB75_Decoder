@@ -8,6 +8,9 @@
 
 #include <stdio.h>
 
+#include "../../src-lib/lcd/lcd.h"
+#include "../../src-lib/uart/uart.h"
+
 #include "../device/deviceconfig.h"
 
 #include "countFastPorts.h"

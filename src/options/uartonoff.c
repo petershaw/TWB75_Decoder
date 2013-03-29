@@ -47,7 +47,7 @@ void *opt_uartonoff_init(void){
         }
         _delay_ms(200);
     }
-
+    return NULL;
 }
 
 
