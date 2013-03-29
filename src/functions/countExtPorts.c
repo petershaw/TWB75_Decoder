@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+#include "../global.h"
 #include "../../src-lib/lcd/lcd.h"
 #include "../../src-lib/uart/uart.h"
 
