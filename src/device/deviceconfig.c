@@ -27,6 +27,7 @@
  */
 void restore_preferences(void){
     char pref;
+    pref = 0;
     pref = eeprom_read_byte(EEPROM_ADRESS_PREFERENCES);
     
     if(pref & PREFERENCE_UART_DATA) {
@@ -39,12 +40,11 @@ void restore_preferences(void){
  */
 void save_preferences(void){
     char pref;
-//    if(opt_send_data_via_uart)
-//    pref = eeprom_read_byte(EEPROM_ADRESS_PREFERENCES);
-    
-//    if(pref & PREFERENCE_UART_DATA) {
-//        ;
-//    }
+    pref = 0;
+    if(opt_send_data_via_uart){
+        pref = (pref | PREFERENCE_UART_DATA);
+    }
+    eeprom_update_byte(EEPROM_ADRESS_PREFERENCES, pref);
 }
 
 

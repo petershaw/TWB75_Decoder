@@ -9,13 +9,14 @@
 #include <stdio.h>
 #include "../cu/cu.h"
 
-#define PREF_A                            (1)
-#define PREF_B                            (2)
-#define PREF_C                            (4)
-#define PREF_D                            (8)
+#define PREF_A                            (1)   // 00000001
+#define PREF_B                            (2)   // 00000010
+#define PREF_C                            (4)   // 00000100
+#define PREF_D                            (8)   // 00001000
 
-TEST(testPref) {
-    
+// 10                                              00001010
+
+TEST(testRead) {
     char rA;
     char rB;
     char rC;
@@ -44,5 +45,16 @@ TEST(testPref) {
     assertTrue(0 == rB);
     assertTrue(1 == rC);
     assertTrue(0 == rD);
+}
+
+TEST(testSet){
+    char result;
+    result = 0;
+    
+    assertTrue(0 == result);
+
+    result = (result | PREF_B);
+    result = (result | PREF_D);
+    assertEquals(10 ,result);
     
 }

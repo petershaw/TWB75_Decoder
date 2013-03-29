@@ -104,17 +104,17 @@ void *fn_countExtPorts(void){
     lcd_puts(buf_cnt_ext_ports);
     if(opt_send_data_via_uart){
         LIGHT_ON(LED_RED);
-        itoa(cntBlue, buf, 10);
-        uart_puts( buf );
+        itoa(cntBlue, buf_cnt_ext_ports, 10);
+        uart_puts( buf_cnt_ext_ports );
         uart_puts( ",");
-        itoa(cntGreen, buf, 10);
-        uart_puts( buf );
+        itoa(cntGreen, buf_cnt_ext_ports, 10);
+        uart_puts( buf_cnt_ext_ports );
         uart_puts( "," );
-        itoa(cntYellow, buf, 10);
-        uart_puts( buf );
+        itoa(cntYellow, buf_cnt_ext_ports, 10);
+        uart_puts( buf_cnt_ext_ports );
         uart_puts( "," );
-        itoa(cntWhite, buf, 10);
-        uart_puts( buf );
+        itoa(cntWhite, buf_cnt_ext_ports, 10);
+        uart_puts( buf_cnt_ext_ports );
 
         LIGHT_OFF(LED_RED);
     }

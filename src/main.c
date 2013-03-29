@@ -20,6 +20,7 @@
 #include "control/frontbuttoncontrol.h"
 
 #include "options/uartonoff.h"
+#include "options/saveeeprom.h"
 
 #include "functions/hello.h"
 #include "functions/countExtPorts.h"
@@ -47,6 +48,7 @@ int main(void) {
     ui_menu_add("Show DAC values", fn_showDACValue );
     menuentry_t *optionsMenu = ui_menu_add("Options:\n(Submenu)", dummy );
     ui_menu_add_sub(optionsMenu, "Send data via\nUART", opt_uartonoff_init );
+    ui_menu_add_sub(optionsMenu, "Save Preferences", opt_save_preferences );
     
     ui_menu_show();
     

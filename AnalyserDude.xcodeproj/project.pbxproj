@@ -23,6 +23,8 @@
 		3001750A1702553000332DE8 /* langTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = langTest.h; path = tests/lang/langTest.h; sourceTree = "<group>"; };
 		3001750B170255EC00332DE8 /* langTest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = langTest.c; path = tests/langTest.c; sourceTree = "<group>"; };
 		3001750C170255EC00332DE8 /* menuTest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = menuTest.c; path = tests/menuTest.c; sourceTree = "<group>"; };
+		3024D9FA1705B555008C133F /* saveeeprom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = saveeeprom.h; path = src/options/saveeeprom.h; sourceTree = "<group>"; };
+		3024D9FB1705B56E008C133F /* saveeeprom.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = saveeeprom.c; path = src/options/saveeeprom.c; sourceTree = "<group>"; };
 		3079F19A16EC1F5600750ED5 /* menuTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = menuTest.h; path = tests/menu/menuTest.h; sourceTree = "<group>"; };
 		3079F19C16EC1FBC00750ED5 /* test.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = test.c; path = tests/test.c; sourceTree = "<group>"; };
 		3079F19E16ECA89600750ED5 /* frontbuttoncontrol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = frontbuttoncontrol.h; path = src/control/frontbuttoncontrol.h; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		2F4953BD16F7E45B003117AF /* Options */ = {
 			isa = PBXGroup;
 			children = (
+				3024D9FA1705B555008C133F /* saveeeprom.h */,
 				2F4953BF16F7E48A003117AF /* uartonoff.h */,
 			);
 			name = Options;
@@ -93,6 +96,7 @@
 		2F4953BE16F7E469003117AF /* Options */ = {
 			isa = PBXGroup;
 			children = (
+				3024D9FB1705B56E008C133F /* saveeeprom.c */,
 				2F4953C016F7E49E003117AF /* uartonoff.c */,
 			);
 			name = Options;

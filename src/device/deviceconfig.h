@@ -74,4 +74,6 @@ void device_init(void);
 
 void device_reset(void);
 
+void save_preferences(void);
+
 #endif
