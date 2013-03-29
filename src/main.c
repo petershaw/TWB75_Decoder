@@ -24,7 +24,7 @@
 
 #include "functions/hello.h"
 #include "functions/countExtPorts.h"
-#include "functions/countFastPorts.h"
+#include "functions/showFastPorts.h"
 #include "functions/showDACValue.h"
 
 // DUMMY FUNCTION
