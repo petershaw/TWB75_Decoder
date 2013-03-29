@@ -38,8 +38,8 @@
 		3079F1A816ED0D4500750ED5 /* dummy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dummy.c; path = src/functions/dummy.c; sourceTree = "<group>"; };
 		3079F1A916ED261400750ED5 /* showDACValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = showDACValue.h; path = src/functions/showDACValue.h; sourceTree = "<group>"; };
 		3079F1AA16ED262800750ED5 /* showDACValue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = showDACValue.c; path = src/functions/showDACValue.c; sourceTree = "<group>"; };
-		3079F1AB16ED2C2700750ED5 /* countFastPorts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = countFastPorts.h; path = src/functions/countFastPorts.h; sourceTree = "<group>"; };
-		3079F1AC16ED2C3A00750ED5 /* countFastPorts.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = countFastPorts.c; path = src/functions/countFastPorts.c; sourceTree = "<group>"; };
+		3079F1AB16ED2C2700750ED5 /* showFastPorts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = showFastPorts.h; path = src/functions/showFastPorts.h; sourceTree = "<group>"; };
+		3079F1AC16ED2C3A00750ED5 /* showFastPorts.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = showFastPorts.c; path = src/functions/showFastPorts.c; sourceTree = "<group>"; };
 		cd5dbf3629c558b0104ba8f0937d6816 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,7 +155,7 @@
 				3079F1A616ED0BB800750ED5 /* countExtPorts.c */,
 				3079F1A816ED0D4500750ED5 /* dummy.c */,
 				3079F1AA16ED262800750ED5 /* showDACValue.c */,
-				3079F1AC16ED2C3A00750ED5 /* countFastPorts.c */,
+				3079F1AC16ED2C3A00750ED5 /* showFastPorts.c */,
 			);
 			name = Functions;
 			sourceTree = "<group>";
@@ -167,7 +167,7 @@
 				3079F1A516ED0BA600750ED5 /* countExtPorts.h */,
 				3079F1A716ED0CFD00750ED5 /* dummy.h */,
 				3079F1A916ED261400750ED5 /* showDACValue.h */,
-				3079F1AB16ED2C2700750ED5 /* countFastPorts.h */,
+				3079F1AB16ED2C2700750ED5 /* showFastPorts.h */,
 			);
 			name = Functions;
 			sourceTree = "<group>";
