@@ -9,7 +9,6 @@
 #ifndef AnalyserDude_countExtPorts_h
 #define AnalyserDude_countExtPorts_h
 
-bool opt_send_data_via_uart;
 void *fn_countExtPorts(void);
 
 #endif

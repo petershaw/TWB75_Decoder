@@ -8,13 +8,18 @@
 
 #include <stdio.h>
 
+#include "../../src-lib/lcd/lcd.h"
+#include "../../src-lib/uart/uart.h"
+
+#include "../global.h"
 #include "../device/deviceconfig.h"
+#include "../ui/lights.h"
 
 #include "showDACValue.h"
 
 
 volatile int dacValue_1 = 0;
-volatile int dacValue_2 = 0;
+ int dacValue_2 = 0;
 
 char buf_dac_values[16] = "";
 
@@ -44,6 +49,14 @@ void *fn_showDACValue(void){
     lcd_gotoxy(0, 2);
     sprintf(buf_dac_values, " %4d       %4d", dacValue_1, dacValue_2);
     lcd_puts(buf_dac_values);
+
+    if(opt_send_data_via_uart){
+        LIGHT_ON(LED_RED);
+        sprintf(buf_dac_values, "%d,%d;\n", dacValue_1, dacValue_2);
+        uart_puts( buf_dac_values );
+        uart_puts("\n");
+        LIGHT_OFF(LED_RED);
+    }
 
     // count the ports
     sampleDACPorts_read();

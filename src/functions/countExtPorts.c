@@ -7,7 +7,12 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdbool.h>
+
+#include "../global.h"
+#include "../../src-lib/lcd/lcd.h"
+#include "../../src-lib/uart/uart.h"
 
 #include "../device/deviceconfig.h"
 #include "../ui/lights.h"
@@ -104,18 +109,9 @@ void *fn_countExtPorts(void){
     lcd_puts(buf_cnt_ext_ports);
     if(opt_send_data_via_uart){
         LIGHT_ON(LED_RED);
-        itoa(cntBlue, buf, 10);
-        uart_puts( buf );
-        uart_puts( ",");
-        itoa(cntGreen, buf, 10);
-        uart_puts( buf );
-        uart_puts( "," );
-        itoa(cntYellow, buf, 10);
-        uart_puts( buf );
-        uart_puts( "," );
-        itoa(cntWhite, buf, 10);
-        uart_puts( buf );
-
+        sprintf(buf_cnt_ext_ports, "%d,%d,%d,%d;\n", cntBlue, cntGreen, cntYellow, cntWhite);
+        uart_puts( buf_cnt_ext_ports );
+        uart_puts( "\n" );
         LIGHT_OFF(LED_RED);
     }
     // count the ports

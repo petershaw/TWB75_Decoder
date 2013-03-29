@@ -22,19 +22,31 @@
 #include "../global.h"
 #include "deviceconfig.h"
 
-char EEMEM preferences_settings;
-
 /**
  * Restores the saved preferences from the eeprom 
  */
 void restore_preferences(void){
     char pref;
-    pref = eeprom_read_byte(&preferences_settings);
+    pref = 0;
+    pref = eeprom_read_byte(EEPROM_ADRESS_PREFERENCES);
     
-    if(pref & PREFERENCE_UART_DATA == PREFERENCE_UART_DATA) {
+    if(pref & PREFERENCE_UART_DATA) {
         opt_send_data_via_uart = true;
     }
 }
+
+/**
+ * Restores the saved preferences from the eeprom
+ */
+void save_preferences(void){
+    char pref;
+    pref = 0;
+    if(opt_send_data_via_uart){
+        pref = (pref | PREFERENCE_UART_DATA);
+    }
+    eeprom_update_byte(EEPROM_ADRESS_PREFERENCES, pref);
+}
+
 
 /**
  * Initialize the lcd and printout a welcome message 
@@ -65,8 +77,8 @@ void initialize_piso(void){
  * Initialize the fast digital lane
  */
 void initialize_fast_digital(void){
-//    DIGITAL_IN_1_DATA_DIRECTION_REGISTER ^= (1 << DIGITAL_IN_1_PIN);
-//    DIGITAL_IN_1_DATA_DIRECTION_REGISTER ^= (1 << DIGITAL_IN_2_PIN);
+    DIGITAL_IN_1_DATA_DIRECTION_REGISTER ^= (1 << DIGITAL_IN_1_PIN);
+    DIGITAL_IN_1_DATA_DIRECTION_REGISTER ^= (1 << DIGITAL_IN_2_PIN);
 }
 
 void initialize_uart(void){

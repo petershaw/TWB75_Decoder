@@ -52,8 +52,9 @@ PRJSRC = src/device/deviceconfig.c \
 	src/functions/hello.c \
 	src/functions/countExtPorts.c \
 	src/functions/showDACValue.c \
-	src/functions/countFastPorts.c \
+	src/functions/showFastPorts.c \
 	src/options/uartonoff.c \
+    src/options/saveeeprom.c \
 	src/main.c
 
 # additional includes (e.g. -I/path/to/mydir)

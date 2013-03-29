@@ -31,10 +31,12 @@
 #define DIGITAL_IN_1_DATA_DIRECTION_REGISTER   DDRB
 #define DIGITAL_IN_1_PORT      PORTB
 #define DIGITAL_IN_1_PIN       PB2                          // PB.2
+#define DIGITAL_IN_1_READ      PINB
 
 #define DIGITAL_IN_2_DATA_DIRECTION_REGISTER   DDRD
 #define DIGITAL_IN_2_PORT      PORTD
 #define DIGITAL_IN_2_PIN       PD7                          // PD.7
+#define DIGITAL_IN_2_READ      PIND
 
 // DEFINE THE OUTPUTS
 // ---------------------------------------------
@@ -55,8 +57,9 @@
 #define PISO_OUTPUT_PIN                 0b00010000         // SR .pin  9
 #define PISO_OUTPUT_PIN_NAME            PB4         
 
-// DEFINE THE BUTTONS
+// DEFINE THE EEPROM
 // ---------------------------------------------
+#define EEPROM_ADRESS_PREFERENCES       (0x00)            // First Cell
 
 // DEFINE COMMUNICATION SPEED
 // ---------------------------------------------
@@ -72,5 +75,7 @@
 void device_init(void);
 
 void device_reset(void);
+
+void save_preferences(void);
 
 #endif
