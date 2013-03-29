@@ -77,8 +77,8 @@ void initialize_piso(void){
  * Initialize the fast digital lane
  */
 void initialize_fast_digital(void){
-//    DIGITAL_IN_1_DATA_DIRECTION_REGISTER ^= (1 << DIGITAL_IN_1_PIN);
-//    DIGITAL_IN_1_DATA_DIRECTION_REGISTER ^= (1 << DIGITAL_IN_2_PIN);
+    DIGITAL_IN_1_DATA_DIRECTION_REGISTER ^= (1 << DIGITAL_IN_1_PIN);
+    DIGITAL_IN_1_DATA_DIRECTION_REGISTER ^= (1 << DIGITAL_IN_2_PIN);
 }
 
 void initialize_uart(void){

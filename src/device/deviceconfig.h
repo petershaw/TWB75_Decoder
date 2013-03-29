@@ -31,10 +31,12 @@
 #define DIGITAL_IN_1_DATA_DIRECTION_REGISTER   DDRB
 #define DIGITAL_IN_1_PORT      PORTB
 #define DIGITAL_IN_1_PIN       PB2                          // PB.2
+#define DIGITAL_IN_1_READ      PINB
 
 #define DIGITAL_IN_2_DATA_DIRECTION_REGISTER   DDRD
 #define DIGITAL_IN_2_PORT      PORTD
 #define DIGITAL_IN_2_PIN       PD7                          // PD.7
+#define DIGITAL_IN_2_READ      PIND
 
 // DEFINE THE OUTPUTS
 // ---------------------------------------------
