@@ -109,18 +109,9 @@ void *fn_countExtPorts(void){
     lcd_puts(buf_cnt_ext_ports);
     if(opt_send_data_via_uart){
         LIGHT_ON(LED_RED);
-        itoa(cntBlue, buf_cnt_ext_ports, 10);
+        sprintf(buf_cnt_ext_ports, "%d,%d,%d,%d;\n", cntBlue, cntGreen, cntYellow, cntWhite);
         uart_puts( buf_cnt_ext_ports );
-        uart_puts( ",");
-        itoa(cntGreen, buf_cnt_ext_ports, 10);
-        uart_puts( buf_cnt_ext_ports );
-        uart_puts( "," );
-        itoa(cntYellow, buf_cnt_ext_ports, 10);
-        uart_puts( buf_cnt_ext_ports );
-        uart_puts( "," );
-        itoa(cntWhite, buf_cnt_ext_ports, 10);
-        uart_puts( buf_cnt_ext_ports );
-        uart_puts( ";\n" );
+        uart_puts( "\n" );
         LIGHT_OFF(LED_RED);
     }
     // count the ports

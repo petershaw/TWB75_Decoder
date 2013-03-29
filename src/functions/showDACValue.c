@@ -19,7 +19,7 @@
 
 
 volatile int dacValue_1 = 0;
-volatile int dacValue_2 = 0;
+ int dacValue_2 = 0;
 
 char buf_dac_values[16] = "";
 
@@ -52,12 +52,9 @@ void *fn_showDACValue(void){
 
     if(opt_send_data_via_uart){
         LIGHT_ON(LED_RED);
-        itoa(dacValue_1, buf_dac_values, 10);
+        sprintf(buf_dac_values, "%d,%d;\n", dacValue_1, dacValue_2);
         uart_puts( buf_dac_values );
-        uart_puts( ",");
-        itoa(dacValue_2, buf_dac_values, 10);
-        uart_puts( buf_dac_values );
-        uart_puts( ";\n" );
+        uart_puts("\n");
         LIGHT_OFF(LED_RED);
     }
 
