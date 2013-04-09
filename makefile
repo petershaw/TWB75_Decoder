@@ -54,11 +54,8 @@ PRJSRC = src/device/deviceconfig.c \
 	src/functions/countExtPorts.c \
 	src/functions/showDACValue.c \
 	src/functions/showFastPorts.c \
-<<<<<<< HEAD
-=======
     src/functions/timerdemo.c \
     src/functions/uptime.c \
->>>>>>> add cron & preference saving
 	src/options/uartonoff.c \
     src/options/saveeeprom.c \
 	src/main.c

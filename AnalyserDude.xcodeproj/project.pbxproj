@@ -21,11 +21,8 @@
 		3000B38616EBA09F009F4E75 /* menuTest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = menuTest.c; path = tests/menu/menuTest.c; sourceTree = "<group>"; };
 		300175091702553000332DE8 /* langTest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = langTest.c; path = tests/lang/langTest.c; sourceTree = "<group>"; };
 		3001750A1702553000332DE8 /* langTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = langTest.h; path = tests/lang/langTest.h; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		3001750B170255EC00332DE8 /* langTest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = langTest.c; path = tests/langTest.c; sourceTree = "<group>"; };
 		3001750C170255EC00332DE8 /* menuTest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = menuTest.c; path = tests/menuTest.c; sourceTree = "<group>"; };
-=======
->>>>>>> add cron & preference saving
 		3024D9FA1705B555008C133F /* saveeeprom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = saveeeprom.h; path = src/options/saveeeprom.h; sourceTree = "<group>"; };
 		3024D9FB1705B56E008C133F /* saveeeprom.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = saveeeprom.c; path = src/options/saveeeprom.c; sourceTree = "<group>"; };
 		3079F19A16EC1F5600750ED5 /* menuTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = menuTest.h; path = tests/menu/menuTest.h; sourceTree = "<group>"; };
@@ -43,8 +40,6 @@
 		3079F1AA16ED262800750ED5 /* showDACValue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = showDACValue.c; path = src/functions/showDACValue.c; sourceTree = "<group>"; };
 		3079F1AB16ED2C2700750ED5 /* showFastPorts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = showFastPorts.h; path = src/functions/showFastPorts.h; sourceTree = "<group>"; };
 		3079F1AC16ED2C3A00750ED5 /* showFastPorts.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = showFastPorts.c; path = src/functions/showFastPorts.c; sourceTree = "<group>"; };
-<<<<<<< HEAD
-=======
 		30A9C0A11713EDA7005BF277 /* uptime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = uptime.h; path = src/functions/uptime.h; sourceTree = "<group>"; };
 		30A9C0A21713EDB9005BF277 /* uptime.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = uptime.c; path = src/functions/uptime.c; sourceTree = "<group>"; };
 		30DAB76D1707C5EE00202821 /* timerdemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = timerdemo.h; path = src/functions/timerdemo.h; sourceTree = "<group>"; };
@@ -57,7 +52,6 @@
 		30DAB7751708F5CE00202821 /* timerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = timerTest.h; path = tests/cron/timerTest.h; sourceTree = "<group>"; };
 		30DAB7761708F5F100202821 /* timerTest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = timerTest.c; path = tests/cron/timerTest.c; sourceTree = "<group>"; };
 		30DAB7771708F63600202821 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; name = Makefile; path = tests/Makefile; sourceTree = "<group>"; };
->>>>>>> add cron & preference saving
 		cd5dbf3629c558b0104ba8f0937d6816 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,10 +172,7 @@
 				3079F1A816ED0D4500750ED5 /* dummy.c */,
 				3079F1AA16ED262800750ED5 /* showDACValue.c */,
 				3079F1AC16ED2C3A00750ED5 /* showFastPorts.c */,
-<<<<<<< HEAD
-=======
 				30DAB76E1707C60800202821 /* timerdemo.c */,
->>>>>>> add cron & preference saving
 			);
 			name = Functions;
 			sourceTree = "<group>";
@@ -195,10 +186,7 @@
 				3079F1A716ED0CFD00750ED5 /* dummy.h */,
 				3079F1A916ED261400750ED5 /* showDACValue.h */,
 				3079F1AB16ED2C2700750ED5 /* showFastPorts.h */,
-<<<<<<< HEAD
-=======
 				30DAB76D1707C5EE00202821 /* timerdemo.h */,
->>>>>>> add cron & preference saving
 			);
 			name = Functions;
 			sourceTree = "<group>";
