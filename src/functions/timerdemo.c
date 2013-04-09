@@ -10,4 +10,5 @@
 
 void *fn_timerDemo(int init){
 
+    return(( void *)0);
 }

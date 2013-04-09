@@ -20,11 +20,11 @@
 
 #include "uartonoff.h"
 
-bool opt_send_data_via_uart_lastvalue;
+bool opt_send_data_via_uart_lastvalue = false;
 
 void *opt_uartonoff_init(int init){
     frontbuttoncontrol_read();
-    if(opt_send_data_via_uart_lastvalue == NULL || opt_send_data_via_uart_lastvalue != opt_send_data_via_uart){
+    if(opt_send_data_via_uart_lastvalue != opt_send_data_via_uart){
         lcd_gotoxy(0, 2);
         if(opt_send_data_via_uart == false){
             lcd_puts("Uart turned off");

@@ -19,7 +19,7 @@ void interuptServiceRoutine(void);
 typedef struct cron_joblist {
     char identifyer;
     uint32_t total_ms;                           // total time in ms
-    void (*fn)();                           // function to execute at timeout
+    void (*fn)(void);                           // function to execute at timeout
     struct cron_joblist *next;               // next element
 } cron_joblist_t;
 

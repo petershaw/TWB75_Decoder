@@ -159,7 +159,7 @@ char cron_add_job(int ms, int sec, int min, int hours, void *fn){
     } else {
         // sort the element in the right order
         cron_joblist_t  *current;
-        cron_joblist_t  *previous;
+        cron_joblist_t  *previous = NULL;
         current         = crontab_ptr->first;
         while (current != NULL){
             if(total_ms <= current->total_ms){
