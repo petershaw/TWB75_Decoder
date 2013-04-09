@@ -89,3 +89,18 @@ TEST(testTimerGetTime){
     assertEquals(3, cron_minutes);
     assertEquals(12, cron_hours);
 }
+
+TEST(testTimerSecondsNotOver){
+    cron_init();
+    int i;
+    int biggest = 0;
+    for(i=0; i<86400000; ++i){
+        cron_increment_clock();
+        cron_calculate_hms();
+        if(cron_seconds > biggest){
+            biggest = cron_seconds;
+        }
+    }
+    assertTrue(biggest < 60);
+}
+

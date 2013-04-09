@@ -20,7 +20,7 @@ int lastSec = 0;
 void *uptime_update_clock(void){
     lcd_gotoxy(0, 0);
     cron_calculate_hms();
-    sprintf(buf_uptime_string, "uptime: %2d:%2d:%2d", cron_hours, cron_minutes, cron_seconds);
+    sprintf(buf_uptime_string, "uptime: %02d:%02d:%02d", cron_hours, cron_minutes, cron_seconds);
     return((void *)0);
 }
 
@@ -30,8 +30,9 @@ void *fn_uptime(int init){
         // update clock every second
         job = cron_add_job(0, 1, 0, 0, uptime_update_clock);
     }
-    frontbuttoncontrol_read();
+    uptime_update_clock();
     while(1){
+        frontbuttoncontrol_read();
         if(button_pressed){
             int val = frontbuttoncontrol_get_button();
             if(val == BUTTON_WHITE){

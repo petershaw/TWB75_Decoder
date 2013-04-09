@@ -83,9 +83,9 @@ void interuptServiceRoutine(void){
 
 void cron_calculate_hms(void){
     // ms +(sec *1000) +(min *60 *1000) +(hours *60 *60 *1000);
-    cron_hours      = abs(system_millisecunds_since_startup /60 /60 /1000);
-    cron_minutes    = abs((system_millisecunds_since_startup -(cron_hours *60 *60 *1000)) /60 /1000);
-    cron_seconds    = abs(((system_millisecunds_since_startup -(cron_hours *60 *60 *1000))-(cron_minutes *60 *1000)) /1000);
+    cron_hours      = abs( system_millisecunds_since_startup /60 /60 /1000);
+    cron_minutes    = abs( (system_millisecunds_since_startup -(cron_hours *60 *60 *1000)) /60 /1000);
+    cron_seconds    = abs( ((system_millisecunds_since_startup -(cron_hours *60 *60 *1000))-(cron_minutes *60 *1000)) /1000);
 }
 
 void cron_init(void){
