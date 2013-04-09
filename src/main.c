@@ -26,6 +26,7 @@
 #include "functions/countExtPorts.h"
 #include "functions/showFastPorts.h"
 #include "functions/showDACValue.h"
+#include "functions/uptime.h"
 
 // DUMMY FUNCTION
 // ---------------------------------------------
@@ -46,6 +47,7 @@ int main(void) {
     ui_menu_add("Count ext ports", fn_countExtPorts );
     ui_menu_add("Show fast ports", fn_showFastPorts );
     ui_menu_add("Show DAC values", fn_showDACValue );
+    ui_menu_add("Show the uptime", fn_uptime );
     menuentry_t *optionsMenu = ui_menu_add("Options:\n(Submenu)", dummy );
     ui_menu_add_sub(optionsMenu, "Send data via\nUART", opt_uartonoff_init );
     ui_menu_add_sub(optionsMenu, "Save Preferences", opt_save_preferences );
@@ -78,7 +80,7 @@ int main(void) {
                 } else {
                     button_listening = false;
                     isApplicationRunning = true;
-                    ui_menu_run();
+                    ui_menu_run(1);
                 }
             }
             // leaving submenu
@@ -99,7 +101,7 @@ int main(void) {
         }
         
         if(isApplicationRunning){ 
-          ui_menu_run();
+          ui_menu_run(0);
         }
         
     }

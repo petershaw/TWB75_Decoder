@@ -22,7 +22,7 @@
 
 bool opt_send_data_via_uart_lastvalue;
 
-void *opt_uartonoff_init(void){
+void *opt_uartonoff_init(int init){
     frontbuttoncontrol_read();
     if(opt_send_data_via_uart_lastvalue == NULL || opt_send_data_via_uart_lastvalue != opt_send_data_via_uart){
         lcd_gotoxy(0, 2);

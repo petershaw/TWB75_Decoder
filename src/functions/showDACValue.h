@@ -9,6 +9,6 @@
 #ifndef AnalyserDude_showDACValue_h
 #define AnalyserDude_showDACValue_h
 
-void *fn_showDACValue(void);
+void *fn_showDACValue(int init);
 
 #endif

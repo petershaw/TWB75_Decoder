@@ -11,6 +11,6 @@
 /**
  * this dummy starup function does nothing
  */
-void *fn_dummy(void){
+void *fn_dummy(int init){
     return (void *) NULL;
 }

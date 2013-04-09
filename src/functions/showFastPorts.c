@@ -24,7 +24,11 @@ volatile int value_2 = 0;
 
 char buf_fdi_values[16];
 
+<<<<<<< HEAD
 void *fn_showFastPorts(void){
+=======
+void *fn_showFastPorts(int init){
+>>>>>>> add cron & preference saving
     // display the application screen
     lcd_puts("Digi 1   Digit 2");
     lcd_gotoxy(0, 2);

@@ -20,6 +20,7 @@
 #endif
 
 #include "../global.h"
+#include "../control/cron.h"
 #include "deviceconfig.h"
 
 /**
@@ -112,6 +113,9 @@ void device_init(void){
     // read preferences from eeprom
     restore_preferences();
     
+    // enable cron
+    cron_init();
+
     // enable the interrupts
     sei();
 

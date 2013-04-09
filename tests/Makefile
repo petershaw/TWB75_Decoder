@@ -2,7 +2,14 @@ CC = gcc
 CFLAGS = -g -Wall -pedantic --std=gnu99 -DIGNOREINTESTS=1
 LDFLAGS = -Lcu/ -lcu -DIGNOREINTESTS=1
 
-OBJS = ../src/ui/menu.o menu/menuTest.o lang/langTest.o test.o 
+OBJS = cu/cu.o \
+	../src/ui/menu.o \
+	menu/menuTest.o \
+	lang/langTest.o \
+	../src/control/cron.o \
+	cron/cronTest.o \
+    cron/timerTest.o \
+	test.o 
 
 all: test
 
@@ -15,6 +22,6 @@ test: $(OBJS)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
-	rm -f *.o test
+	rm -rf *.o test
 
 .PHONY: all clean

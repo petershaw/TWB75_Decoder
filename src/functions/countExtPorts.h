@@ -9,6 +9,10 @@
 #ifndef AnalyserDude_countExtPorts_h
 #define AnalyserDude_countExtPorts_h
 
+<<<<<<< HEAD
 void *fn_countExtPorts(void);
+=======
+void *fn_countExtPorts(int init);
+>>>>>>> add cron & preference saving
 
 #endif

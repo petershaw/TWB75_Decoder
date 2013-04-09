@@ -43,7 +43,7 @@ void sampleDACPorts_read(void){
 	ADCSRA &= ~(1<<ADEN);                   // disable ADC
 }
 
-void *fn_showDACValue(void){
+void *fn_showDACValue(int init){
     // display the application screen
     lcd_puts(("DAC 1      DAC 2"));
     lcd_gotoxy(0, 2);

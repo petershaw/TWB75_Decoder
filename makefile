@@ -47,12 +47,18 @@ PRJSRC = src/device/deviceconfig.c \
 	src-lib/lcd/lcd.c \
 	src-lib/uart/uart.c \
 	src/control/frontbuttoncontrol.c \
+    src/control/cron.c \
 	src/ui/lights.c \
 	src/ui/menu.c \
 	src/functions/hello.c \
 	src/functions/countExtPorts.c \
 	src/functions/showDACValue.c \
 	src/functions/showFastPorts.c \
+<<<<<<< HEAD
+=======
+    src/functions/timerdemo.c \
+    src/functions/uptime.c \
+>>>>>>> add cron & preference saving
 	src/options/uartonoff.c \
     src/options/saveeeprom.c \
 	src/main.c

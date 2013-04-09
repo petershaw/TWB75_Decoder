@@ -156,11 +156,11 @@ void ui_menu_show(void){
 #endif
 }
 
-void ui_menu_run(void){
+void ui_menu_run(int a){
 #ifndef IGNOREINTESTS
     LIGHT_TOGGLE(LED_GREEN);
     lcd_clrscr();
-    active->fn();
+    active->fn(a);
 #endif
 }
 
