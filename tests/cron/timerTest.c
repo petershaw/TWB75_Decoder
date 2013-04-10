@@ -64,7 +64,7 @@ TEST(testTimerGetTime){
     assertEquals(0, cron_minutes);
     assertEquals(0, cron_hours);
     
-    cron_calculate_hms();
+    cron_calculate_uptime_hms();
     printf("TIME: %02d:%02d:%02d\n", cron_hours, cron_minutes, cron_seconds);
     assertEquals(0, cron_seconds);
     assertEquals(0, cron_minutes);
@@ -74,7 +74,7 @@ TEST(testTimerGetTime){
     for(i=0; i<43200000; ++i){
         cron_increment_clock();
     }
-    cron_calculate_hms();
+    cron_calculate_uptime_hms();
     printf("TIME: %02d:%02d:%02d\n", cron_hours, cron_minutes, cron_seconds);
     assertEquals(0, cron_seconds);
     assertEquals(0, cron_minutes);
@@ -83,7 +83,7 @@ TEST(testTimerGetTime){
     for(i=0; i<(60000 *3)+ (1000*30); ++i){
         cron_increment_clock();
     }
-    cron_calculate_hms();
+    cron_calculate_uptime_hms();
     printf("TIME: %02d:%02d:%02d\n", cron_hours, cron_minutes, cron_seconds);
     assertEquals(30, cron_seconds);
     assertEquals(3, cron_minutes);
@@ -93,14 +93,31 @@ TEST(testTimerGetTime){
 TEST(testTimerSecondsNotOver){
     cron_init();
     int i;
-    int biggest = 0;
-    for(i=0; i<86400000; ++i){
+    int biggest_sec = 0;
+    int biggest_min = 0;
+    int biggest_hour = 0;
+    int lastSec = 0;
+    char buf_uptime_string[16];
+    for(i=0; i<86400000 *3; ++i){ // 3 Tage
         cron_increment_clock();
-        cron_calculate_hms();
-        if(cron_seconds > biggest){
-            biggest = cron_seconds;
+        cron_calculate_uptime_hms();
+        if(cron_seconds > biggest_sec){
+            biggest_sec = cron_seconds;
+        }
+        if(cron_minutes > biggest_min){
+            biggest_min = cron_minutes;
+        }
+        if(cron_hours > biggest_hour){
+            biggest_hour = cron_hours;
+        }
+        if(lastSec != cron_seconds){
+            printf("uptime: %02d:%02d:%02d\n", cron_hours, cron_minutes, cron_seconds);
+
+            lastSec = cron_seconds;
         }
     }
-    assertTrue(biggest < 60);
+    assertTrue(biggest_sec == 59);
+    assertTrue(biggest_min == 59);
+    assertTrue(biggest_hour == 23);
 }
 

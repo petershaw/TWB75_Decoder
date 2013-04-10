@@ -53,7 +53,7 @@ void cron_init(void);
 /**
  * calculate the timer in h m s
  */
-void cron_calculate_hms(void);
+void cron_calculate_uptime_hms(void);
 
 /**
  * Add a new job to the crontab
@@ -77,5 +77,9 @@ void cron_clear(void);
  * Count the number of jobs in the table
  */
 int cron_count(void);
+
+#ifdef IGNOREINTESTS
+void cron_increment_clock(void);
+#endif
 
 #endif
