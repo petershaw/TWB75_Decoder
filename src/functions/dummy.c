@@ -6,7 +6,8 @@
 //
 //
 //  A dummy function.
-//  Do nothing. - But is usefull for menu entries that does not have a function to execute.
+//  Do nothing. - But is usefull for menu entries that does not
+//  have a function to execute.
 //  eg. Parent-Entries to submenues.
 // 
 
