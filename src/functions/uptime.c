@@ -6,6 +6,7 @@
 //
 //
 //  Show the time in hh:mm:ss the system is running.
+//  This fnction uses the cron facility to update the string buffer.
 //
 
 #include <stdio.h>

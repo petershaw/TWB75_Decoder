@@ -5,6 +5,9 @@
 //  Created by Peter Shaw on 3/10/13.
 //
 //
+//  Show the current Value of the both fast external ports
+//  maybe this values are obscure? Play with it. :-)
+//
 
 #include <stdio.h>
 

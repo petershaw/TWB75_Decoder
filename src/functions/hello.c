@@ -4,6 +4,9 @@
 //
 //  Created by Peter Shaw on 3/10/13.
 //
+//  Test function that demonstrate the basic useage of a function.
+//  It will print out "Hello world." to the lcd and move a dash from left to right and reverse
+//  on the second line.
 //
 
 #include <stdio.h>

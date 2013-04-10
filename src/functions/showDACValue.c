@@ -5,6 +5,9 @@
 //  Created by Peter Shaw on 3/10/13.
 //
 //
+//  Show the values of the both analog input in 10Bit resolution.
+//  From 0 (0 Volts) - 1023 (5 Volts)
+//
 
 #include <stdio.h>
 

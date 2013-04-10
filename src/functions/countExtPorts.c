@@ -5,6 +5,8 @@
 //  Created by Peter Shaw on 3/10/13.
 //
 //
+//  Count the rising edges on the four external ports
+//
 
 #include <stdio.h>
 #include <stdlib.h>
