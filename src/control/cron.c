@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <math.h>
+#include <stdbool.h>
 
 #ifndef IGNOREINTESTS
 #include <avr/io.h>
@@ -107,6 +108,11 @@ void cron_init(void){
     crontab_ptr->first                  = NULL;
     crontab_ptr->last                   = NULL;
     
+    // initialize the timeouts
+    timeout_ptr = malloc(sizeof(cron_timeoutborders_t));
+    timeout_ptr->first                  = NULL;
+    timeout_ptr->last                   = NULL;
+    
 #ifndef IGNOREINTESTS
     // timer (timer0) setup
     TCCR0A = (1<<WGM01);                    // CTC Modus
@@ -180,10 +186,46 @@ char cron_add_job(int ms, int sec, int min, int hours, void *fn){
             current = current->next;
         }
     }
-    
-    
-    
     return newCronJob->identifyer;
+}
+        
+void cron_set_timeout(char id, int ms, int sec, int min, int hours, void *fn){
+    
+    uint32_t ms_left                = ms +(sec *1000) +(min *60 *1000) +(hours *60 *60 *1000);
+    
+    // if exists?
+    bool changed;
+    changed = false;
+    cron_timeoutlist_t *current;
+    current = timeout_ptr->first;
+    while(current != NULL){
+        if(current->identifyer == id){
+            current->ms_left         = ms_left;
+            current->fn              = fn;
+            changed = true;
+            break;
+        }
+        current = current->next;
+    }
+    if(changed == true){
+        return;
+    }
+    cron_timeoutlist_t *newCronTimeout  = malloc(sizeof(cron_timeoutlist_t));
+    newCronTimeout->identifyer      = id;
+    newCronTimeout->fn              = fn;
+    
+    newCronTimeout->ms_left         = ms_left;
+    newCronTimeout->next            = NULL;
+    
+    // add to list
+    if (timeout_ptr->last           == NULL) {
+        // first element
+        timeout_ptr->last           = newCronTimeout;
+        timeout_ptr->first          = newCronTimeout;
+    } else {
+        timeout_ptr->last->next     = newCronTimeout;
+        timeout_ptr->last           = newCronTimeout;
+    }
 }
 
 void cron_remove_job(char jobid){
@@ -209,6 +251,30 @@ void cron_remove_job(char jobid){
         }
     }
 }
+    
+void cron_remove_timeout(char id){
+    cron_timeoutlist_t  *current;
+    cron_timeoutlist_t  *previous;
+    cron_timeoutlist_t  *next;
+    previous        = NULL;
+    next            = NULL;
+    current         = timeout_ptr->first;
+    while (current  != NULL) {
+        if(current->identifyer == id){
+            if(current == timeout_ptr->first){
+                timeout_ptr->first = current->next;
+            } else {
+                next = current->next;
+                previous->next = next;
+            }
+            free(current);
+            break;
+        } else {
+            previous    = current;
+            current     = current->next;
+        }
+    }
+}
 
 void cron_clear(void){
     cron_joblist_t *current;
@@ -221,11 +287,23 @@ void cron_clear(void){
     crontab_ptr->last = NULL;
 }
 
-int cron_count(void) {
+int cron_count_jobs(void) {
     int cnt;
     cron_joblist_t *current;
     cnt = 0;
     current = crontab_ptr->first;
+    while (current != NULL) {
+        ++cnt;
+        current = current->next;
+    }
+    return cnt;
+}
+    
+int cron_count_timeouts(void){
+    int cnt;
+    cron_timeoutlist_t *current;
+    cnt = 0;
+    current = timeout_ptr->first;
     while (current != NULL) {
         ++cnt;
         current = current->next;

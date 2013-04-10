@@ -159,7 +159,9 @@ void ui_menu_show(void){
 void ui_menu_run(int a){
 #ifndef IGNOREINTESTS
     LIGHT_TOGGLE(LED_GREEN);
-    lcd_clrscr();
+    if(a == 1){ // clear screen on init
+        lcd_clrscr();
+    }
     active->fn(a);
 #endif
 }

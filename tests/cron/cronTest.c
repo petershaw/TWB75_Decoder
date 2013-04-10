@@ -38,78 +38,78 @@ TEST(testCronAdd) {
 
 TEST(testCronCount){
     cron_init();
-    assertEquals(0, cron_count());
+    assertEquals(0, cron_count_jobs());
     
     cron_add_job(1, 0, 0, 0, dummy);
-    assertEquals(1, cron_count());
+    assertEquals(1, cron_count_jobs());
 
     cron_add_job(0, 0, 1, 0, dummy);
-    assertEquals(2, cron_count());
+    assertEquals(2, cron_count_jobs());
     
     cron_add_job(0, 1, 0, 0, dummy);
-    assertEquals(3, cron_count());
+    assertEquals(3, cron_count_jobs());
 
     cron_add_job(0, 1, 0, 0, dummy);
-    assertEquals(4, cron_count());
+    assertEquals(4, cron_count_jobs());
 
     cron_add_job(0, 2, 1, 0, dummy);
-    assertEquals(5, cron_count());
+    assertEquals(5, cron_count_jobs());
 }
 
 TEST(testCronRemove){
     cron_init();
-    assertEquals(0, cron_count());
+    assertEquals(0, cron_count_jobs());
     
     char job1, job2, job3, job4, job5, job6, job7, job8, job9;
     
     job1 = cron_add_job(0, 0, 0, 1, dummy);
-    assertEquals(1, cron_count());
+    assertEquals(1, cron_count_jobs());
     
     job2 = cron_add_job(0, 0, 0, 2, dummy);
-    assertEquals(2, cron_count());
+    assertEquals(2, cron_count_jobs());
 
     job3 = cron_add_job(0, 0, 0, 3, dummy);
-    assertEquals(3, cron_count());
+    assertEquals(3, cron_count_jobs());
 
     job4 = cron_add_job(0, 2, 0, 0, dummy);
-    assertEquals(4, cron_count());
+    assertEquals(4, cron_count_jobs());
 
     job5 = cron_add_job(500, 1, 0, 0, dummy);
-    assertEquals(5, cron_count());
+    assertEquals(5, cron_count_jobs());
 
     job6 = cron_add_job(0, 1, 0, 0, dummy);
-    assertEquals(6, cron_count());
+    assertEquals(6, cron_count_jobs());
     
     job7 = cron_add_job(0, 2, 0, 0, dummy);
-    assertEquals(7, cron_count());
+    assertEquals(7, cron_count_jobs());
 
     job8 = cron_add_job(0, 0, 0, 3, dummy);
-    assertEquals(8, cron_count());
+    assertEquals(8, cron_count_jobs());
 
     job9 = cron_add_job(0, 0, 2, 0, dummy);
-    assertEquals(9, cron_count());
+    assertEquals(9, cron_count_jobs());
 
     // remove a leave with rlb-sub nodes
     cron_remove_job(job4);
-    assertEquals(8, cron_count());
+    assertEquals(8, cron_count_jobs());
 
     cron_remove_job(job8);
-    assertEquals(7, cron_count());
+    assertEquals(7, cron_count_jobs());
 }
 
 TEST(testCronClear){
     cron_init();
-    assertEquals(0, cron_count());
+    assertEquals(0, cron_count_jobs());
     cron_clear();
-    assertEquals(0, cron_count());
+    assertEquals(0, cron_count_jobs());
     
     cron_add_job(0, 0, 0, 1, dummy);
     cron_add_job(0, 0, 0, 2, dummy);
     cron_add_job(0, 0, 0, 3, dummy);
-    assertEquals(3, cron_count());
+    assertEquals(3, cron_count_jobs());
     
     cron_clear();
-    assertEquals(0, cron_count());
+    assertEquals(0, cron_count_jobs());
 }
 
 TEST(testCronSorted){
@@ -124,7 +124,7 @@ TEST(testCronSorted){
     cron_add_job(0, 0, 0, 3, dummy);
     cron_add_job(0, 0, 2, 0, dummy);
     
-    assertEquals(9, cron_count());
+    assertEquals(9, cron_count_jobs());
     cron_joblist_t  *current;
     current         = crontab_ptr->first;
     int c, lastvalue;
@@ -149,10 +149,10 @@ TEST(testCronExecute){
     
     char job1, job2;
     job1 = cron_add_job(3, 0, 0, 0, incrementNumber);
-    assertEquals(1, cron_count());
+    assertEquals(1, cron_count_jobs());
 
     job2 = cron_add_job(1, 0, 0, 0, incrementNumber);
-    assertEquals(2, cron_count());
+    assertEquals(2, cron_count_jobs());
 
     cron_joblist_t  *current;
     current         = crontab_ptr->first;

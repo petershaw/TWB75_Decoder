@@ -9,6 +9,14 @@
 #ifndef AnalyserDude_timerdemo_h
 #define AnalyserDude_timerdemo_h
 
+#define ASCII_BEGIN_NUMBERS     (48)
+#define timerDemo_TIMEOUT_ID    (1)
+
+unsigned int timerDemo_current_value;
+char timerDemoBuffer[8];
+int timerDemo_last_button_pressed;
+int timerDemo_current_charackter_position;
+
 void *fn_timerDemo(int init);
 
 #endif

@@ -7,6 +7,7 @@
 #include "lang/langTest.h"
 #include "cron/cronTest.h"
 #include "cron/timerTest.h"
+#include "cron/timeoutTest.h"
 
 // This struct contains all test suites
 TEST_SUITES {
@@ -14,6 +15,7 @@ TEST_SUITES {
     TEST_SUITE_ADD(LANG_TEST),      // add LANG test suite
     TEST_SUITE_ADD(CRON_TEST),      // add CRON test suite
     TEST_SUITE_ADD(TIMER_TEST),     // add TIMER test suite
+    TEST_SUITE_ADD(CRON_TIMEOUT_TEST), // add TIMEOUT test suite
     TEST_SUITES_CLOSURE
 };
 

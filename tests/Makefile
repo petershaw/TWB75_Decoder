@@ -9,6 +9,7 @@ OBJS = cu/cu.o \
 	../src/control/cron.o \
 	cron/cronTest.o \
     cron/timerTest.o \
+    cron/timeoutTest.o \
 	test.o 
 
 all: test
