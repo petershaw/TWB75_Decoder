@@ -29,7 +29,7 @@ char nextidentifyer;
 void cron_increment_clock(void){
     ++system_millisecunds_since_startup;
     ++cron_ms_for_execution_timer;
-    if(system_millisecunds_since_startup == 86400000){
+    if(system_millisecunds_since_startup >= 86400000){
         // 24h
         system_millisecunds_since_startup = 0;
         ++system_days_since_startup;
@@ -85,11 +85,13 @@ void interuptServiceRoutine(void){
 
 void cron_calculate_uptime_hms(){
     // ms +(sec *1000) +(min *60 *1000) +(hours *60 *60 *1000);
-    uint32_t ms;
-    ms = system_millisecunds_since_startup;
-    cron_hours      = floor( ms /60 /60 /1000);
-    cron_minutes    = floor( (ms -(cron_hours *60 *60 *1000)) /60 /1000);
-    cron_seconds    = floor( ((ms -(cron_hours *60 *60 *1000))-(cron_minutes *60 *1000)) /1000);
+    
+    const uint32_t s = abs(system_millisecunds_since_startup /1000);
+
+    cron_hours      = floor( s /60 /60);
+    cron_minutes    = floor( (s -(cron_hours *60 *60)) /60);
+    cron_seconds    = floor( s  -((cron_hours *60 *60)
+                                +(cron_minutes *60)));
 }
 
 void cron_init(void){

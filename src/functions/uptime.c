@@ -19,6 +19,7 @@
 #include "../control/cron.h"
 
 char buf_uptime_string[16];
+char buf_systemtime_string[16];
 int lastSec = 60;   // never reached, so the first tick will change the value and updtes the display
 int _uptime_job = 0;
 
@@ -26,6 +27,8 @@ void *uptime_update_clock(void){
     LIGHT_TOGGLE(LED_RED);
     cron_calculate_uptime_hms();
     sprintf(buf_uptime_string, "uptime: %02d:%02d:%02d", cron_hours, cron_minutes, cron_seconds);
+    sprintf(buf_systemtime_string, "%ld ms up\n", system_millisecunds_since_startup);
+
     return((void *)0);
 }
 
@@ -51,6 +54,8 @@ void *fn_uptime(int init){
         if(lastSec != cron_seconds){
             lcd_gotoxy(0, 0);
             lcd_puts((const char *)buf_uptime_string);
+            lcd_gotoxy(0, 1);
+            lcd_puts(buf_systemtime_string);
             lastSec = cron_seconds;
         }
     }

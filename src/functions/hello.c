@@ -27,7 +27,10 @@
 int hello_position = 0;                     // position of -
 
 void *fn_sayHello(int init){
+    lcd_gotoxy(0, 0);
     lcd_puts(("hello world."));
+    lcd_gotoxy(0, 2);
+    lcd_puts(("                "));
     lcd_gotoxy(hello_position, 2);
     lcd_puts(" -");
     ++hello_position;
