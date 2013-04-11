@@ -34,21 +34,17 @@ void *opt_uartonoff_init(int init){
     }
     
     if(frontbuttoncontrol_get_button() == BUTTON_BLUE){
-        opt_send_data_via_uart = !opt_send_data_via_uart;
+        LIGHT_ON(LED_RED);
+        opt_send_data_via_uart = !(opt_send_data_via_uart);
         if(opt_send_data_via_uart){
-            LIGHT_ON(LED_RED);
             _delay_ms(300);
             uart_puts("Starts to send data:\n");
             LIGHT_OFF(LED_RED);
-        } else {
-            LIGHT_ON(LED_RED);
-            _delay_ms(300);
-            uart_puts("Stop sending data.\n");
-            LIGHT_OFF(LED_RED);
         }
-        _delay_ms(700);
+        _delay_ms(500);
+        LIGHT_OFF(LED_RED);
     }
-    return NULL;
+    return ((void*)NULL);
 }
 
 

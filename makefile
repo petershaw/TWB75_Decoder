@@ -54,8 +54,8 @@ PRJSRC = src/device/deviceconfig.c \
 	src/functions/countExtPorts.c \
 	src/functions/showDACValue.c \
 	src/functions/showFastPorts.c \
-    src/functions/timerdemo.c \
     src/functions/uptime.c \
+	src/functions/timeoutDemo.c \
 	src/options/uartonoff.c \
     src/options/saveeeprom.c \
 	src/main.c

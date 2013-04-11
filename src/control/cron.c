@@ -46,7 +46,7 @@ void cron_increment_clock(void){
  */
 void cron_execute_jobs(void){
     // check first
-    if(cron_ms_for_execution_timer < crontab_ptr->first->total_ms){
+    if(crontab_ptr->first == NULL || (cron_ms_for_execution_timer < crontab_ptr->first->total_ms)){
         // too low, nothing can ever match
         return;
     }
@@ -59,6 +59,23 @@ void cron_execute_jobs(void){
     current         = crontab_ptr->first;
     while(current != NULL &&  current->total_ms <= cron_ms_for_execution_timer){
         if( (cron_ms_for_execution_timer % current->total_ms) == 0 ){
+            current->fn();
+        }
+        current = current->next;
+    }
+}
+
+/**
+ * Should a timeout is up
+ * -------------------------
+ * called from ISR(TIMER0_COMPA_vect)
+ */
+void cron_execute_timeout(void){
+    cron_timeoutlist_t  *current;
+    current         = timeout_ptr->first;
+    while(current != NULL){
+        --current->ms_left;
+        if(current->ms_left <= 0){
             current->fn();
         }
         current = current->next;
@@ -81,6 +98,8 @@ void interuptServiceRoutine(void){
     cron_increment_clock();
     // should execute a job?
     cron_execute_jobs();
+    // should execute a job?
+    cron_execute_timeout();
 }
 
 void cron_calculate_uptime_hms(){

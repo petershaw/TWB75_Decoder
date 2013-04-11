@@ -47,6 +47,7 @@ void *fn_uptime(int init){
                 if(_uptime_job > 0){
                     cron_remove_job(_uptime_job);
                 }
+                _uptime_job = NULL;
                 //leave
                 break;
             }

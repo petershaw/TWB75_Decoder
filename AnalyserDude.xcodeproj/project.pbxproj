@@ -40,10 +40,10 @@
 		3079F1AA16ED262800750ED5 /* showDACValue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = showDACValue.c; path = src/functions/showDACValue.c; sourceTree = "<group>"; };
 		3079F1AB16ED2C2700750ED5 /* showFastPorts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = showFastPorts.h; path = src/functions/showFastPorts.h; sourceTree = "<group>"; };
 		3079F1AC16ED2C3A00750ED5 /* showFastPorts.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = showFastPorts.c; path = src/functions/showFastPorts.c; sourceTree = "<group>"; };
+		309A21B0171771DE00052AAC /* timeoutDemo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = timeoutDemo.c; path = src/functions/timeoutDemo.c; sourceTree = "<group>"; };
+		309A21B1171771F100052AAC /* timeoutDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = timeoutDemo.h; path = src/functions/timeoutDemo.h; sourceTree = "<group>"; };
 		30A9C0A11713EDA7005BF277 /* uptime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = uptime.h; path = src/functions/uptime.h; sourceTree = "<group>"; };
 		30A9C0A21713EDB9005BF277 /* uptime.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = uptime.c; path = src/functions/uptime.c; sourceTree = "<group>"; };
-		30DAB76D1707C5EE00202821 /* timerdemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = timerdemo.h; path = src/functions/timerdemo.h; sourceTree = "<group>"; };
-		30DAB76E1707C60800202821 /* timerdemo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = timerdemo.c; path = src/functions/timerdemo.c; sourceTree = "<group>"; };
 		30DAB76F1708271200202821 /* cron.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = cron.h; path = src/control/cron.h; sourceTree = "<group>"; };
 		30DAB7701708272200202821 /* cron.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = cron.c; path = src/control/cron.c; sourceTree = "<group>"; };
 		30DAB7711708365800202821 /* uart.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = uart.c; path = "src-lib/uart/uart.c"; sourceTree = "<group>"; };
@@ -166,13 +166,13 @@
 		3079F1A116ECCE5000750ED5 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
+				309A21B0171771DE00052AAC /* timeoutDemo.c */,
 				30A9C0A21713EDB9005BF277 /* uptime.c */,
 				3079F1A316ECCEBA00750ED5 /* hello.c */,
 				3079F1A616ED0BB800750ED5 /* countExtPorts.c */,
 				3079F1A816ED0D4500750ED5 /* dummy.c */,
 				3079F1AA16ED262800750ED5 /* showDACValue.c */,
 				3079F1AC16ED2C3A00750ED5 /* showFastPorts.c */,
-				30DAB76E1707C60800202821 /* timerdemo.c */,
 			);
 			name = Functions;
 			sourceTree = "<group>";
@@ -180,13 +180,13 @@
 		3079F1A216ECCE5B00750ED5 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
+				309A21B1171771F100052AAC /* timeoutDemo.h */,
 				30A9C0A11713EDA7005BF277 /* uptime.h */,
 				3079F1A416ECCEDA00750ED5 /* hello.h */,
 				3079F1A516ED0BA600750ED5 /* countExtPorts.h */,
 				3079F1A716ED0CFD00750ED5 /* dummy.h */,
 				3079F1A916ED261400750ED5 /* showDACValue.h */,
 				3079F1AB16ED2C2700750ED5 /* showFastPorts.h */,
-				30DAB76D1707C5EE00202821 /* timerdemo.h */,
 			);
 			name = Functions;
 			sourceTree = "<group>";
@@ -220,20 +220,6 @@
 			passBuildSettingsInEnvironment = 1;
 			productName = AnalyserDude;
 		};
-		305211AD16F71DC7002A6475 /* AnalyserTests */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = "$(ACTION)";
-			buildConfigurationList = 305211AE16F71DC7002A6475 /* Build configuration list for PBXLegacyTarget "AnalyserTests" */;
-			buildPhases = (
-			);
-			buildToolPath = make;
-			buildWorkingDirectory = "";
-			dependencies = (
-			);
-			name = AnalyserTests;
-			passBuildSettingsInEnvironment = 1;
-			productName = AnalyserTests;
-		};
 /* End PBXLegacyTarget section */
 
 /* Begin PBXProject section */
@@ -255,7 +241,6 @@
 			projectRoot = "";
 			targets = (
 				23FC44C71512C22700AD7469 /* AnalyserDude */,
-				305211AD16F71DC7002A6475 /* AnalyserTests */,
 			);
 		};
 /* End PBXProject section */
@@ -341,37 +326,6 @@
 			};
 			name = Release;
 		};
-		305211AF16F71DC7002A6475 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_WARN_EMPTY_BODY = YES;
-				DEBUGGING_SYMBOLS = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_VERSION = gcc;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		305211B016F71DC7002A6475 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_WARN_EMPTY_BODY = YES;
-				GCC_VERSION = gcc;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -389,15 +343,6 @@
 			buildConfigurations = (
 				23FC44C91512C22800AD7469 /* Debug */,
 				23FC44CA1512C22800AD7469 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		305211AE16F71DC7002A6475 /* Build configuration list for PBXLegacyTarget "AnalyserTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				305211AF16F71DC7002A6475 /* Debug */,
-				305211B016F71DC7002A6475 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
