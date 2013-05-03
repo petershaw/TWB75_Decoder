@@ -5,6 +5,9 @@
 //  Created by Peter Shaw on 3/10/13.
 //
 //
+//  Show the values of the both analog input in 10Bit resolution.
+//  From 0 (0 Volts) - 1023 (5 Volts)
+//
 
 #include <stdio.h>
 
@@ -43,7 +46,7 @@ void sampleDACPorts_read(void){
 	ADCSRA &= ~(1<<ADEN);                   // disable ADC
 }
 
-void *fn_showDACValue(void){
+void *fn_showDACValue(int init){
     // display the application screen
     lcd_puts(("DAC 1      DAC 2"));
     lcd_gotoxy(0, 2);

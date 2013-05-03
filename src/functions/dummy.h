@@ -9,7 +9,7 @@
 #ifndef AnalyserDude_dummy_h
 #define AnalyserDude_dummy_h
 
-void *fn_dummy(void);
+void *fn_dummy(int init);
 
 
 #endif

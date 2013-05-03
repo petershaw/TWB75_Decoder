@@ -20,7 +20,7 @@ typedef struct menuentry {
     struct menuentry *parent;   // pointer to the parent entry
     struct menuentry *submenu;  // submenu of this item
     char *data;                 // the raw data string to show
-    void (*fn)();               // function to execute at startup
+    void (*fn)(int);               // function to execute at startup
 } menuentry_t;
 
 /**
@@ -43,6 +43,6 @@ bool ui_menu_has_submenu(void);
 void ui_menu_enter_submenu(void);
 void ui_menu_leave_submenu(void);
 void ui_menu_show(void);
-void ui_menu_run(void);
+void ui_menu_run(int);
 
 #endif

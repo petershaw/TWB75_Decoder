@@ -20,6 +20,7 @@
 #endif
 
 #include "../global.h"
+#include "../control/cron.h"
 #include "deviceconfig.h"
 
 /**
@@ -66,7 +67,7 @@ void initialize_piso(void){
     PISO_DATA_DIRECTION_REGISTER |= PISO_CLOCK_PIN;
     PISO_DATA_DIRECTION_REGISTER |= PISO_INHIBIT_PIN;
     PISO_DATA_DIRECTION_REGISTER |= PISO_LOAD_PIN;
-    PISO_DATA_DIRECTION_REGISTER &= ~(1<<PISO_OUTPUT_PIN);          //  INPUT pin
+    PISO_DATA_DIRECTION_REGISTER &= ~((long)1<< PISO_OUTPUT_PIN);          //  INPUT pin
     
     PISO_CLOCK_PORT &= ~PISO_CLOCK_PIN;                             // CLOCK OFF
     PISO_LOAD_PORT  |= PISO_LOAD_PIN;                               // LOAD ON
@@ -112,6 +113,9 @@ void device_init(void){
     // read preferences from eeprom
     restore_preferences();
     
+    // enable cron
+    cron_init();
+
     // enable the interrupts
     sei();
 

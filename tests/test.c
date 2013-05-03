@@ -4,12 +4,18 @@
 #endif
 
 #include "menu/menuTest.h"
-#include "lang/langTest.h";
+#include "lang/langTest.h"
+#include "cron/cronTest.h"
+#include "cron/timerTest.h"
+#include "cron/timeoutTest.h"
 
 // This struct contains all test suites
 TEST_SUITES {
-    TEST_SUITE_ADD(UI_MENUTEST),    // add T1 test suite
-    TEST_SUITE_ADD(LANG_TEST),      // add T1 test suite
+    TEST_SUITE_ADD(UI_MENUTEST),    // add UI test suite
+    TEST_SUITE_ADD(LANG_TEST),      // add LANG test suite
+    TEST_SUITE_ADD(CRON_TEST),      // add CRON test suite
+    TEST_SUITE_ADD(TIMER_TEST),     // add TIMER test suite
+    TEST_SUITE_ADD(CRON_TIMEOUT_TEST), // add TIMEOUT test suite
     TEST_SUITES_CLOSURE
 };
 

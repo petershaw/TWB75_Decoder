@@ -9,6 +9,7 @@
 #ifndef AnalyserDude_countExtPorts_h
 #define AnalyserDude_countExtPorts_h
 
-void *fn_countExtPorts(void);
+
+void *fn_countExtPorts(int init);
 
 #endif

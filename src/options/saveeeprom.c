@@ -23,7 +23,8 @@
  * Saving preferences to eeprom
  * This is a one shot application
  */
-void *opt_save_preferences(void){
+
+void *opt_save_preferences(int init){
     LIGHT_ON(LED_RED);
     lcd_puts("Saveing data to\neeprom...\n");
     if(opt_send_data_via_uart){

@@ -9,6 +9,6 @@
 #ifndef AnalyserDude_saveeeprom_h
 #define AnalyserDude_saveeeprom_h
 
-void *opt_save_preferences(void);
+void *opt_save_preferences(int init);
 
 #endif

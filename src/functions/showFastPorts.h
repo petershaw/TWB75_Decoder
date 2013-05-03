@@ -9,6 +9,7 @@
 #ifndef AnalyserDude_countFastPorts_h
 #define AnalyserDude_countFastPorts_h
 
-void *fn_showFastPorts(void);
+
+void *fn_showFastPorts(int init);
 
 #endif

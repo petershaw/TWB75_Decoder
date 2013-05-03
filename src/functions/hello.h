@@ -10,6 +10,6 @@
 #define AnalyserDude_hello_h
 
 bool opt_send_data_via_uart;
-void *fn_sayHello(void);
+void *fn_sayHello(int init);
 
 #endif

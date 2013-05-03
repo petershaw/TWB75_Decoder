@@ -5,6 +5,9 @@
 //  Created by Peter Shaw on 3/10/13.
 //
 //
+//  Show the current Value of the both fast external ports
+//  maybe this values are obscure? Play with it. :-)
+//
 
 #include <stdio.h>
 
@@ -24,7 +27,8 @@ volatile int value_2 = 0;
 
 char buf_fdi_values[16];
 
-void *fn_showFastPorts(void){
+
+void *fn_showFastPorts(int init){
     // display the application screen
     lcd_puts("Digi 1   Digit 2");
     lcd_gotoxy(0, 2);

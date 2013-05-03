@@ -17,6 +17,8 @@
 #define CLR(U, N)   ((void)((U) &= ~(1u << (N))))
 #define FLIP(U, N)  ((void)((U) ^= 1u << (N)))
 
+#define stopApplication()   isApplicationRunning = false;
+
 volatile bool isApplicationRunning;
 bool opt_send_data_via_uart;
 bool debug_mode;

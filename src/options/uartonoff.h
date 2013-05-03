@@ -9,6 +9,6 @@
 #ifndef AnalyserDude_uartonoff_h
 #define AnalyserDude_uartonoff_h
 
-void *opt_uartonoff_init(void);
+void *opt_uartonoff_init(int init);
 
 #endif

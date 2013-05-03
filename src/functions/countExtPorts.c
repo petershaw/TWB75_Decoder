@@ -5,6 +5,8 @@
 //  Created by Peter Shaw on 3/10/13.
 //
 //
+//  Count the rising edges on the four external ports
+//
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -101,7 +103,7 @@ void countExtPorts_resetOnOverflow(void){
     }
 }
 
-void *fn_countExtPorts(void){
+void *fn_countExtPorts(int init){
     // display the application screen
     lcd_puts("BLU GRN YEL WHI");
     lcd_gotoxy(0, 2);

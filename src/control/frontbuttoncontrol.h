@@ -9,6 +9,8 @@
 #ifndef AnalyserDude_frontbuttoncontrol_h
 #define AnalyserDude_frontbuttoncontrol_h
 
+#include <stdbool.h>
+
 #define BUTTON_BLUE     1
 #define BUTTON_GREEN    2
 #define BUTTON_YELLOW   3
