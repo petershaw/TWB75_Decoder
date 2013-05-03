@@ -28,6 +28,7 @@
 #include "functions/showDACValue.h"
 #include "functions/uptime.h"
 #include "functions/timeoutDemo.h"
+#include "functions/twb75.h"
 
 // DUMMY FUNCTION
 // ---------------------------------------------
@@ -44,12 +45,13 @@ int main(void) {
     device_reset();
     
     ui_menu_init();
-    ui_menu_add("Say Hello",            fn_sayHello );
+//    ui_menu_add("Say Hello",            fn_sayHello );
     ui_menu_add("Count ext ports",      fn_countExtPorts );
-    ui_menu_add("Edit text",            fn_timeoutDemo );
-    ui_menu_add("Show fast ports",      fn_showFastPorts );
-    ui_menu_add("Show DAC values",      fn_showDACValue );
-    ui_menu_add("Show uptime",          fn_uptime );
+//    ui_menu_add("Edit text",            fn_timeoutDemo );
+//    ui_menu_add("Show fast ports",      fn_showFastPorts );
+//    ui_menu_add("Show DAC values",      fn_showDACValue );
+//    ui_menu_add("Show uptime",          fn_uptime );
+    ui_menu_add("TWB75 Decoder",        fn_twb75 );
     menuentry_t *optionsMenu = ui_menu_add("Options:\n(Submenu)", dummy );
     ui_menu_add_sub(optionsMenu, "Send data via\nUART", opt_uartonoff_init );
     ui_menu_add_sub(optionsMenu, "Save Preferences", opt_save_preferences );

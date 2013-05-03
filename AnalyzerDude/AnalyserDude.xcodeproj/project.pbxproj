@@ -25,6 +25,8 @@
 		3024D9FB1705B56E008C133F /* saveeeprom.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = saveeeprom.c; path = src/options/saveeeprom.c; sourceTree = "<group>"; };
 		303503B21715DE3D00869A48 /* timeoutTest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = timeoutTest.c; path = tests/cron/timeoutTest.c; sourceTree = "<group>"; };
 		303503B31715DE5700869A48 /* timeoutTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = timeoutTest.h; path = tests/cron/timeoutTest.h; sourceTree = "<group>"; };
+		30751E411734564B00B20DBB /* twb75.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = twb75.h; path = src/functions/twb75.h; sourceTree = "<group>"; };
+		30751E421734565B00B20DBB /* twb75.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = twb75.c; path = src/functions/twb75.c; sourceTree = "<group>"; };
 		3079F19A16EC1F5600750ED5 /* menuTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = menuTest.h; path = tests/menu/menuTest.h; sourceTree = "<group>"; };
 		3079F19C16EC1FBC00750ED5 /* test.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = test.c; path = tests/test.c; sourceTree = "<group>"; };
 		3079F19E16ECA89600750ED5 /* frontbuttoncontrol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = frontbuttoncontrol.h; path = src/control/frontbuttoncontrol.h; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		3079F1A116ECCE5000750ED5 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
+				30751E421734565B00B20DBB /* twb75.c */,
 				309A21B0171771DE00052AAC /* timeoutDemo.c */,
 				30A9C0A21713EDB9005BF277 /* uptime.c */,
 				3079F1A316ECCEBA00750ED5 /* hello.c */,
@@ -180,6 +183,7 @@
 		3079F1A216ECCE5B00750ED5 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
+				30751E411734564B00B20DBB /* twb75.h */,
 				309A21B1171771F100052AAC /* timeoutDemo.h */,
 				30A9C0A11713EDA7005BF277 /* uptime.h */,
 				3079F1A416ECCEDA00750ED5 /* hello.h */,

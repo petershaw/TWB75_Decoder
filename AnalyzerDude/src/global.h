@@ -18,6 +18,7 @@
 #define FLIP(U, N)  ((void)((U) ^= 1u << (N)))
 
 #define stopApplication()   isApplicationRunning = false;
+#define on_init             if(init == 1)
 
 volatile bool isApplicationRunning;
 bool opt_send_data_via_uart;
