@@ -1,0 +1,15 @@
+
+AnalyserDude.xcodeproj/xcuserdata/*.xcuserdatad/xcschemes/AnalyserDude.xcscheme
+
+AnalyserDude.xcodeproj/xcuserdata/*.xcuserdatad/xcschemes/AnalyserTests.xcscheme
+
+AnalyserDude.xcodeproj/xcuserdata/*.xcuserdatad/xcschemes/xcschememanagement.plist
+
+*.o
+
+*.xcuserstate
+
+
+AnalyserDude.xcodeproj/project.xcworkspace/xcuserdata/*.xcuserdatad/UserInterfaceState.xcuserstate
+
+AnalyserDude.xcodeproj/project.xcworkspace/xcuserdata/*.xcuserdatad/UserInterfaceState.xcuserstate

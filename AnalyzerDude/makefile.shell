@@ -1,0 +1,8 @@
+#!/bin/bash
+# Do not modify this file. It sets up the environment
+# to compile for the AVR.
+
+export PATH=${PATH}:"/Applications/AVR Builder.app/Contents/Resources/avrchain/bin":"/Applications/AVR Builder.app/Contents/MacOS"
+export CPATH="/Applications/AVR Builder.app/Contents/Resources/avrchain/include"
+export LIBPATH="/Applications/AVR Builder.app/Contents/Resources/avrchain/lib"
+/bin/bash "$@"
