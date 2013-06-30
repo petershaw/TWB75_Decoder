@@ -17,6 +17,11 @@
 #define CLR(U, N)   ((void)((U) &= ~(1u << (N))))
 #define FLIP(U, N)  ((void)((U) ^= 1u << (N)))
 
+#define debug(msg)	if(opt_send_data_via_uart){ \
+						uart_puts( msg ); \
+						uart_puts( "\n" ); \
+					}
+
 #define stopApplication()   isApplicationRunning = false;
 #define on_init             if(init == 1)
 

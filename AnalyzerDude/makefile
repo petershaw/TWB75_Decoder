@@ -56,7 +56,7 @@ PRJSRC = src/device/deviceconfig.c \
 	src/functions/showFastPorts.c \
     src/functions/uptime.c \
 	src/functions/timeoutDemo.c \
-    src/functions/twb75.c \
+    src/functions/twb75_II.c \
 	src/options/uartonoff.c \
     src/options/saveeeprom.c \
 	src/main.c
